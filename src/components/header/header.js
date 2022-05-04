@@ -8,8 +8,8 @@ export class Header {
 
     constructor (firstName, lastName, email) {
       this.#firstName = firstName
-      this.lastName = lastName
-      this.email = email
+      this.#lastName = lastName
+      this.#email = email
     }
 
     get firstName() {
@@ -54,14 +54,13 @@ export class Header {
         email.innerText = `${this.#email}`; 
       }],
       [PATHNAMES.find,() => {
-        btn_find.innerText= 'main page',p.innerText = "Find users",
+        btn_find.innerText= 'main page', p.innerText = "Find users",
         header_user_photo.remove();
       }]
     ]);
 
     header.className= 'header';
     header_logo.className ='header__logo';
-
     header_user.className = 'header__user';
     header_user_info.className = 'header__user__info';
     userName.className = 'userName';
@@ -71,6 +70,7 @@ export class Header {
     btn_logout.className = 'btns';
 
     btn_logout.innerText='Logout';
+
     header.append(header_logo, header_user);
     header_logo.append(p);
     header_user.append(header_user_info, header_user_photo, btn_find, btn_logout);
